@@ -11,6 +11,7 @@ fundButton.onclick = fund
 balanceButton.onclick = getBalance
 
 async function connect() {
+  // check if metamask is present
   if (typeof window.ethereum !== "undefined") {
     try {
       await ethereum.request({ method: "eth_requestAccounts" })
@@ -46,14 +47,17 @@ async function withdraw() {
 }
 
 async function fund() {
+  // get the data from html field
   const ethAmount = document.getElementById("ethAmount").value
   console.log(`Funding with ${ethAmount}...`)
+  // check if metamask is present
   if (typeof window.ethereum !== "undefined") {
     const provider = new ethers.BrowserProvider(window.ethereum)
     await provider.send('eth_requestAccounts', [])
     const signer = await provider.getSigner()
     const contract = new ethers.Contract(contractAddress, abi, signer)
     try {
+      //call the fucntion from contract
       const transactionResponse = await contract.fund({
         value: ethers.parseEther(ethAmount),
       })
@@ -69,11 +73,15 @@ async function fund() {
 async function getBalance() {
   if (typeof window.ethereum !== "undefined") {
     const provider = new ethers.BrowserProvider(window.ethereum)
+    const balanceDisplay = document.getElementById("balanceDisplay")
     try {
       const balance = await provider.getBalance(contractAddress)
-      console.log(ethers.formatEther(balance))
+      const formattedBalance = ethers.formatEther(balance)
+      balanceDisplay.innerHTML = `Balance: ${formattedBalance} ETH`
+      console.log(formattedBalance)
     } catch (error) {
       console.log(error)
+      balanceDisplay.innerHTML = "Error getting balance"
     }
   } else {
     balanceButton.innerHTML = "Please install MetaMask"

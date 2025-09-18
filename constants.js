@@ -1,6 +1,8 @@
 // export const zkSyncContractAddress = "0x4B5DF730c2e6b28E17013A1485E5d9BC41Efe021"
 // export const contractAddress = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512"
-export const contractAddress = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512"
+// https://sepolia.etherscan.io/address/0x043222c13176bef909ef265f81f00c3de8d0b647#code
+export const contractAddress = "0x043222c13176bEF909ef265F81F00C3de8d0B647"
+// abi is also obtained from the deployed contract
 export const abi = [
   {
     inputs: [
