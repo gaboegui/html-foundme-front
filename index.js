@@ -1,4 +1,5 @@
 /**
+ * @author Gabriel Eguiguren P.
  * @file index.js
  * @description This script handles the frontend logic for the Fund Me application, including wallet connection, funding, withdrawing, and balance checking.
  */
