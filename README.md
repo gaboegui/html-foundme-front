@@ -2,6 +2,8 @@
 
 This is a minimalistic example what you can find in the [metamask docs](https://docs.metamask.io/guide/create-dapp.html#basic-action-part-1).
 
+![FundMe Web3 App](fundme-web3-app.png)
+
 # Requirements
 
 - [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
