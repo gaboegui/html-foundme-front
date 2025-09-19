@@ -17,8 +17,8 @@ This is a minimalistic example what you can find in the [metamask docs](https://
 1. Clone the repo
 
 ```
-git clone https://github.com/gaboegui/html-foundme-front.git
-cd html-foundme-front
+git clone https://github.com/gaboegui/html-fundme-front.git
+cd html-fundme-front
 ```
 
 2. Run the `index.html` file
